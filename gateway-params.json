@@ -1,0 +1,7 @@
+{
+  "count": 1,
+  "memory": "1024M",
+  "disk": "1024M",
+  "env": {},
+  "mcp-servers": []
+}

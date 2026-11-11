@@ -1,0 +1,40 @@
+---
+applications:
+- name: hub-mcp-agent-demo
+  metadata:
+    labels:
+      ai.tanzu.com/type: agent
+      environment: showcase
+      access-mode: read-only
+  path: .
+  buildpacks:
+  - agent_buildpack
+  memory: 1G
+  disk_quota: 1G
+  instances: 1
+  routes:
+  - route: hub-mcp-agent-demo.apps.tas03.ylhomelab.com
+  health-check-type: http
+  health-check-http-endpoint: /health
+  services:
+  - hub-mcp-agent-model
+  - hub-mcp-agent-sso
+  - tanzu-hub-mcp
+  env:
+    TANZU_AGENT_DISPLAY_NAME: Tanzu Hub MCP Demo
+    TANZU_AGENT_DESCRIPTION: "Automatic SSO → MCP Gateway → Credential Store → Tanzu Hub connection"
+    TANZU_AGENT_WELCOME_SUGGESTION_1: Show the Tanzu Platform foundations I can access.
+    TANZU_AGENT_WELCOME_SUGGESTION_2: Summarize application health from Tanzu Hub.
+    TANZU_AGENT_WELCOME_SUGGESTION_3: List available Tanzu Hub MCP tools and explain their purpose.
+    TANZU_AGENT_DEFAULT_MODEL: glm-5.3-flash-w4a16
+    TANZU_AGENT_REASONING_EFFORT: low
+    TANZU_AGENT_MAX_TOKENS: 8192
+    TANZU_AGENT_ENABLE_DEBUG_UI: true
+    TANZU_AGENT_ENABLE_ADMIN_UI: false
+    TANZU_AGENT_ENABLE_MCP_SETTINGS: true
+    TANZU_AGENT_ENABLE_MODEL_PICKER: false
+    TANZU_AGENT_TOOL_PERMISSION_MODE: ask
+    TANZU_AGENT_AUTH_OAUTH_SCOPES: openid
+    TANZU_AGENT_BASE_URL: https://hub-mcp-agent-demo.apps.tas03.ylhomelab.com
+    TANZU_AGENT_LOG_JSON: true
+    TANZU_AGENT_LOG_LEVEL: INFO

@@ -1,0 +1,12 @@
+{
+  "auth": {
+    "service-instance": {
+      "type": "OAUTH",
+      "name": "hub-mcp-oauth-provider"
+    }
+  },
+  "upstream_mcp_path": "/mcp",
+  "metadata": {
+    "description": "Tanzu Hub MCP through an authenticated internal relay"
+  }
+}
