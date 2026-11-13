@@ -17,7 +17,7 @@ from fastapi.responses import JSONResponse, StreamingResponse
 from starlette.background import BackgroundTask
 
 
-UPSTREAM_URL = os.getenv("HUB_MCP_URL", "https://hub.tas06.ylhomelab.com/hub/mcp")
+UPSTREAM_URL = os.getenv("HUB_MCP_URL", "https://hub.tas.homelab.com/hub/mcp")
 HOP_BY_HOP_HEADERS = {
     "connection",
     "content-length",
