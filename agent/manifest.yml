@@ -13,7 +13,7 @@ applications:
   disk_quota: 1G
   instances: 1
   routes:
-  - route: hub-mcp-agent-demo.apps.tas03.ylhomelab.com
+  - route: hub-mcp-agent-demo.apps.tas.homelab.com
   health-check-type: http
   health-check-http-endpoint: /health
   services:
@@ -35,6 +35,6 @@ applications:
     TANZU_AGENT_ENABLE_MODEL_PICKER: false
     TANZU_AGENT_TOOL_PERMISSION_MODE: ask
     TANZU_AGENT_AUTH_OAUTH_SCOPES: openid
-    TANZU_AGENT_BASE_URL: https://hub-mcp-agent-demo.apps.tas03.ylhomelab.com
+    TANZU_AGENT_BASE_URL: https://hub-mcp-agent-demo.apps.tas.homelab.com
     TANZU_AGENT_LOG_JSON: true
     TANZU_AGENT_LOG_LEVEL: INFO
